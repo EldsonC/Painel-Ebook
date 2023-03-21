@@ -5,7 +5,7 @@ import { ModalAddBook } from "./modal-add-book";
 export function Show() {
     return (
         <>
-            {<ModalAddBook/>}
+            {/* {<ModalAddBook/>} */}
             <ShowStyle>
                 <div className="text-data">
                     <h1>Biblioteca</h1>
