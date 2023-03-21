@@ -57,6 +57,19 @@ export const ShowStyle = styled.div `
 
         overflow-y: scroll;
 
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #D9D9D9;
+            border-radius: 20px;
+            border: 3px solid transparent;
+        }
+
         background: #F4F5F7;
 
         table {
