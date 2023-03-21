@@ -1,8 +1,28 @@
+import { useEffect, useState } from "react";
 import { TrashIcon } from "../../assets/icons/trash";
 import { ShowStyle } from "../../assets/styles/show";
+import { api } from "../services/api";
 import { ModalAddBook } from "./modal-add-book";
 
+
+interface BookProps {
+    cover: string;
+    name: string;
+    author: string;
+    year: number;
+    pages: number;
+    category_id: string;
+}
+
 export function Show() {
+    const [books , setBooks] = useState([])
+
+    useEffect(() => {
+        api.get("/get-books").then((result) => {
+            console.log(result.data)
+            setBooks(result.data)
+        })
+    }, [])
     return (
         <>
             {<ModalAddBook/>}
@@ -32,155 +52,35 @@ export function Show() {
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td className="first-td">
-                                    <div className="image">
+                            {books.map((dataBook:BookProps) => {
+                                return (
 
-                                    </div>
-                                    <div className="">
-                                        <h1>Atos dos apóstolos</h1>
-                                        <span>Ellen G. White</span>
-                                    </div>
-                                </td>
-                                <td>E.Profecia</td>
-                                <td>2004</td>
-                                <td>
-                                    <div className="container-actions">
-                                        <button className="get-book">
-                                            Emprestar
-                                        </button>
-                                        <button>
-                                            <TrashIcon/>
-                                        </button>
-                                    </div>
-                                </td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td className="first-td">
-                                    <div className="image">
-
-                                    </div>
-                                    <div className="">
-                                        <h1>Atos dos apóstolos</h1>
-                                        <span>Ellen G. White</span>
-                                    </div>
-                                </td>
-                                <td>E.Profecia</td>
-                                <td>2004</td>
-                                <td>
-                                    <div className="container-actions">
-                                        <button className="get-book">
-                                            Emprestar
-                                        </button>
-                                        <button>
-                                            <TrashIcon/>
-                                        </button>
-                                    </div>
-                                </td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td className="first-td">
-                                    <div className="image">
-
-                                    </div>
-                                    <div className="">
-                                        <h1>Atos dos apóstolos</h1>
-                                        <span>Ellen G. White</span>
-                                    </div>
-                                </td>
-                                <td>E.Profecia</td>
-                                <td>2004</td>
-                                <td>
-                                    <div className="container-actions">
-                                        <button className="get-book">
-                                            Emprestar
-                                        </button>
-                                        <button>
-                                            <TrashIcon/>
-                                        </button>
-                                    </div>
-                                </td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td className="first-td">
-                                    <div className="image">
-
-                                    </div>
-                                    <div className="">
-                                        <h1>Atos dos apóstolos</h1>
-                                        <span>Ellen G. White</span>
-                                    </div>
-                                </td>
-                                <td>E.Profecia</td>
-                                <td>2004</td>
-                                <td>
-                                    <div className="container-actions">
-                                        <button className="get-book">
-                                            Emprestar
-                                        </button>
-                                        <button>
-                                            <TrashIcon/>
-                                        </button>
-                                    </div>
-                                </td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td className="first-td">
-                                    <div className="image">
-
-                                    </div>
-                                    <div className="">
-                                        <h1>Atos dos apóstolos</h1>
-                                        <span>Ellen G. White</span>
-                                    </div>
-                                </td>
-                                <td>E.Profecia</td>
-                                <td>2004</td>
-                                <td>
-                                    <div className="container-actions">
-                                        <button className="get-book">
-                                            Emprestar
-                                        </button>
-                                        <button>
-                                            <TrashIcon/>
-                                        </button>
-                                    </div>
-                                </td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td className="first-td">
-                                    <div className="image">
-
-                                    </div>
-                                    <div className="">
-                                        <h1>Atos dos apóstolos</h1>
-                                        <span>Ellen G. White</span>
-                                    </div>
-                                </td>
-                                <td>E.Profecia</td>
-                                <td>2004</td>
-                                <td>
-                                    <div className="container-actions">
-                                        <button className="get-book">
-                                            Emprestar
-                                        </button>
-                                        <button>
-                                            <TrashIcon/>
-                                        </button>
-                                    </div>
-                                </td>
-                                
-                            </tr>
+                                    <tr>
+                                        <td className="first-td">
+                                            <div className="image">
+                                                <img src={dataBook.cover}/>
+                                            </div>
+                                            <div>
+                                                <h1>{dataBook.name}</h1>
+                                                <span>{dataBook.author}</span>
+                                            </div>
+                                        </td>
+                                        <td>{dataBook.category_id}</td>
+                                        <td>{dataBook.year}</td>
+                                        <td>
+                                            <div className="container-actions">
+                                                <button className="get-book">
+                                                    Emprestar
+                                                </button>
+                                                <button>
+                                                    <TrashIcon/>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        
+                                    </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>

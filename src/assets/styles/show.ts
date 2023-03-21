@@ -101,6 +101,15 @@ export const ShowStyle = styled.div `
                         background: #D9D9D9;
 
                         border-radius: 50%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+
+                            border-radius: 50%;
+
+                            object-fit: cover;
+                        }
                     }
 
                     h1 {

@@ -53,12 +53,31 @@ export const StyleModalAddBook = styled.div `
             }
 
             label {
+                width: 150px;
+                height: 250px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
                 
                 cursor: pointer;
+
+                img {
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+
+                    object-fit: cover;
+                }
+
+                #image_fill {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
 
                 span {
                     color: white;
