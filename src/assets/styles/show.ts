@@ -9,6 +9,10 @@ export const ShowStyle = styled.div `
     display: flex;
     justify-content: space-between;
 
+    .modal {
+        display: none;
+    }
+
     .text-data {
         width: 40%;
         display: flex;
@@ -179,6 +183,10 @@ export const ShowStyle = styled.div `
 
         gap: 40px;
 
+
+        .modal {
+            display: flex;
+        }
         .text-data {
             width: 100%;
             display: flex;

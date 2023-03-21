@@ -53,6 +53,7 @@ export function ModalAddBook() {
             <div className="container-form">
                 <div className="select-image">
                     <label htmlFor="file">
+                        
                         <img id="image-preview"/>
                         <div id="image_fill">
                             <ImageIcon/>
@@ -60,6 +61,7 @@ export function ModalAddBook() {
                         </div>
                     </label>
                     <input 
+                        required
                         type="file" 
                         id="file"
                         accept="image/png,image/jpeg,image/jpg"
@@ -82,6 +84,7 @@ export function ModalAddBook() {
                         type="text" 
                         placeholder="Titulo"
                         onChange={(e) => setName(e.target.value)}
+                        required
                     />
                     <input 
                         type="text" 
@@ -105,14 +108,15 @@ export function ModalAddBook() {
                         type="text" 
                         placeholder="Category"
                         onChange={(e) => setCategory(e.target.value)}
+                        required
                     />
                     <textarea name="" id="" placeholder="Sinopse">
 
                     </textarea>
                     <div className="actions-form">
-                        <button>
+                        {/* <button>
                             Cancel
-                        </button>
+                        </button> */}
                         <button id="btn-save" onClick={addBook}>
                             Salvar
                         </button>

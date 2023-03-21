@@ -25,8 +25,10 @@ export function Show() {
     }, [])
     return (
         <>
-            {<ModalAddBook/>}
             <ShowStyle>
+                <div className="modal">
+                    {<ModalAddBook/>}
+                </div>
                 <div className="text-data">
                     <h1>Biblioteca</h1>
                     <p>
