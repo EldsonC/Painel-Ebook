@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ShowStyle = styled.div `
     margin-top: 47px;
-    margin-bottom: 100px;
     padding: 0px 80px;
     width: calc(100vw - 160px);
     height: 411px;
