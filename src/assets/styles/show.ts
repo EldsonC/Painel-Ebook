@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ShowStyle = styled.div `
     margin-top: 47px;
+    margin-bottom: 100px;
     padding: 0px 80px;
     width: calc(100vw - 160px);
     height: 411px;
@@ -15,7 +16,7 @@ export const ShowStyle = styled.div `
 
     .text-data {
         width: 40%;
-        display: flex;
+        display: none;
         flex-direction: column;
 
         gap: 25px;
@@ -55,8 +56,8 @@ export const ShowStyle = styled.div `
     }
 
     .books {
-        width: 60%;
-        height: 411px;
+        width: 100%;
+        height: 500px;
 
         overflow-y: scroll;
 
@@ -189,7 +190,7 @@ export const ShowStyle = styled.div `
         }
         .text-data {
             width: 100%;
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
 
