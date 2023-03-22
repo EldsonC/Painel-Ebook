@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { BookIcon } from "../../assets/icons/book";
 import { TrashIcon } from "../../assets/icons/trash";
+import { WorldIcon } from "../../assets/icons/world";
 import { ShowStyle } from "../../assets/styles/show";
+import { bookFound } from "../../redux/features/searchSlice";
 import { api } from "../services/api";
 import { ModalAddBook } from "./modal-add-book";
 
@@ -16,6 +20,7 @@ interface BookProps {
 
 export function Show() {
     const [books , setBooks] = useState([])
+    const bookFind = useSelector(bookFound)
 
     useEffect(() => {
         api.get("/get-books").then((result) => {
@@ -23,6 +28,18 @@ export function Show() {
             setBooks(result.data)
         })
     }, [])
+
+    const World = () => {
+        return <WorldIcon/>
+    }
+
+    const Book = () => {
+        return <BookIcon/>
+    }
+
+    const bookFilter = books.filter((book:BookProps) => book.name?.includes(
+        bookFind.toLocaleLowerCase())
+    )
     return (
         <>
             <ShowStyle>
@@ -54,13 +71,16 @@ export function Show() {
                         </thead>
 
                         <tbody>
-                            {books.map((dataBook:BookProps) => {
+                            {bookFilter.map((dataBook:BookProps) => {
                                 return (
 
                                     <tr>
                                         <td className="first-td">
                                             <div className="image">
-                                                <img src={dataBook.cover}/>
+                                                {
+                                                    dataBook.category_id === "Enciclopédia" ? World() : Book()
+                                                }
+                                                {/* <img src={dataBook.cover}/> */}
                                             </div>
                                             <div>
                                                 <h1>{dataBook.name}</h1>
