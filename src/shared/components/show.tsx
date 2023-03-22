@@ -78,7 +78,7 @@ export function Show() {
                                         <td className="first-td">
                                             <div className="image">
                                                 {
-                                                    dataBook.category_id === "Enciclopédia" ? World() : Book()
+                                                    dataBook.category_id === "Enciclopédia" || dataBook.category_id === "enciclopédia" ? World() : Book()
                                                 }
                                                 {/* <img src={dataBook.cover}/> */}
                                             </div>

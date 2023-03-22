@@ -10,10 +10,6 @@ export const ShowStyle = styled.div `
     display: flex;
     justify-content: space-between;
 
-    .modal {
-        display: none;
-    }
-
     .text-data {
         width: 40%;
         display: none;
@@ -74,7 +70,7 @@ export const ShowStyle = styled.div `
             border: 3px solid transparent;
         }
 
-        background: #F4F5F7;
+        background: transparent;
 
         table {
             margin: 0 auto;
@@ -85,7 +81,7 @@ export const ShowStyle = styled.div `
                 position: sticky;
                 top: 0;
 
-                background: #F4F5F7;
+                background: #fff;
 
                 td {
                     font-size: 12px;
@@ -302,6 +298,7 @@ export const ShowStyle = styled.div `
                     }
 
                     td {
+                        height: 70px;
                         margin-bottom: 22px;
                         font-size: 12px;
                         font-weight: 600;
