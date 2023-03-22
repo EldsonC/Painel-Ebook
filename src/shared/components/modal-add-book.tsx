@@ -3,6 +3,8 @@ import { CloseIcon } from "../../assets/icons/close";
 import { ImageIcon } from "../../assets/icons/image";
 import { StyleModalAddBook } from "../../assets/styles/modal-add-book";
 import { api } from "../services/api";
+import { useDispatch } from "react-redux";
+import { hide } from "../../redux/features/modaladd";
 
 export function ModalAddBook() {
     const [ cover, setCover ] = useState<File | string>("")
@@ -11,6 +13,8 @@ export function ModalAddBook() {
     const [ category, setCategory ] = useState("")
     const [ year, setYear ] = useState(0)
     const [ pages, setPages ] = useState(0)
+
+    const dispatch = useDispatch()
 
     const showPreview = (event:any) => {
         const src = URL.createObjectURL(event.target.files[0])
@@ -114,9 +118,9 @@ export function ModalAddBook() {
 
                     </textarea>
                     <div className="actions-form">
-                        {/* <button>
+                        <button onClick={() => dispatch(hide())}>
                             Cancel
-                        </button> */}
+                        </button>
                         <button id="btn-save" onClick={addBook}>
                             Salvar
                         </button>

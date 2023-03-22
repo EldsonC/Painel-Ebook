@@ -136,6 +136,8 @@ export const ShowStyle = styled.div `
                     font-size: 12px;
                     font-weight: 600;
 
+                    text-transform: uppercase;
+
                     color: #909090;
 
                     
@@ -173,6 +175,7 @@ export const ShowStyle = styled.div `
     }
 
     @media screen and (max-width: 900px){
+        margin-bottom: 0px;
         margin-top: 47px;
         padding: 0px 15px;
         width: calc(100vw - 30px);
@@ -233,7 +236,7 @@ export const ShowStyle = styled.div `
 
         .books {
             width: 100%;
-            height: 411px;
+            height: 600px;
 
             overflow-y: scroll;
 
@@ -245,12 +248,12 @@ export const ShowStyle = styled.div `
             }
 
             ::-webkit-scrollbar-thumb {
-                background-color: #D9D9D9;
+                background-color: transparent;
                 border-radius: 20px;
                 border: 3px solid transparent;
             }
 
-            background: #F4F5F7;
+            background: transparent;
 
             table {
                 margin: 0 auto;
@@ -261,7 +264,7 @@ export const ShowStyle = styled.div `
                     position: sticky;
                     top: 0;
 
-                    background: #F4F5F7;
+                    background: white;
 
                     td {
                         font-size: 12px;
@@ -305,7 +308,6 @@ export const ShowStyle = styled.div `
 
                         color: #909090;
 
-                        
                         .container-actions {
                             display: flex;
                             justify-content: flex-end;

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { LogoIcon } from "../../assets/icons/logo";
 import { StyledLogin } from "../../assets/styles/login";
 
@@ -11,9 +12,11 @@ export function Login() {
             <form>
                 <input type="text" placeholder="Username"/>
                 <input type="password" placeholder="Password"/>
-                <button>
-                    Login
-                </button>
+                    <button>
+                        <NavLink to={"/home"}>
+                            Login
+                        </NavLink>
+                    </button>
             </form>
         </StyledLogin>
     )

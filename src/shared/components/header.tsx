@@ -5,7 +5,13 @@ import { LogoIcon } from "../../assets/icons/logo";
 import { LogoSmallIcon } from "../../assets/icons/logo-small";
 import { HeaderStyle } from "../../assets/styles/header";
 
+import { useDispatch } from "react-redux";
+import { show } from "../../redux/features/modaladd";
+
 export function Header() {
+
+    const dispatch = useDispatch()
+
     return (
         <HeaderStyle>
             <div className="logo">
@@ -31,7 +37,7 @@ export function Header() {
                 </ul>
             </nav>
             <div className="actions">
-                <button className="btn-add">
+                <button className="btn-add" onClick={() => dispatch(show())}>
                     <AddBookIcon/>
                 </button>
                 <button className="btn-add">

@@ -8,6 +8,7 @@ import { bookFound } from "../../redux/features/searchSlice";
 import { api } from "../services/api";
 import { ModalAddBook } from "./modal-add-book";
 
+import { stateModal } from "../../redux/features/modaladd";
 
 interface BookProps {
     cover: string;
@@ -21,6 +22,7 @@ interface BookProps {
 export function Show() {
     const [books , setBooks] = useState([])
     const bookFind = useSelector(bookFound)
+    const modalState = useSelector(stateModal)
 
     useEffect(() => {
         api.get("/get-books").then((result) => {
@@ -38,14 +40,12 @@ export function Show() {
     }
 
     const bookFilter = books.filter((book:BookProps) => book.name?.includes(
-        bookFind.toLocaleLowerCase())
+        bookFind.toLowerCase())
     )
     return (
         <>
+            { modalState ? <ModalAddBook/> : ""}
             <ShowStyle>
-                <div className="modal">
-                    {<ModalAddBook/>}
-                </div>
                 <div className="text-data">
                     <h1>Biblioteca</h1>
                     <p>
