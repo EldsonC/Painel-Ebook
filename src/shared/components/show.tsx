@@ -65,7 +65,7 @@ export function Show() {
                         <thead>
                             <td>Imagen</td>
                             <td>categoria</td>
-                            <td>Ano</td>
+                            <td className="none">Ano</td>
                             <td></td>
                             <td></td>
                         </thead>
@@ -80,7 +80,6 @@ export function Show() {
                                                 {
                                                     dataBook.category_id === "Enciclopédia" || dataBook.category_id === "enciclopédia" ? World() : Book()
                                                 }
-                                                {/* <img src={dataBook.cover}/> */}
                                             </div>
                                             <div>
                                                 <h1>{dataBook.name}</h1>
@@ -88,7 +87,7 @@ export function Show() {
                                             </div>
                                         </td>
                                         <td>{dataBook.category_id}</td>
-                                        <td>{dataBook.year}</td>
+                                        <td className="none">{dataBook.year}</td>
                                         <td>
                                             <div className="container-actions">
                                                 <button className="get-book">

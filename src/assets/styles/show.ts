@@ -5,7 +5,7 @@ export const ShowStyle = styled.div `
     margin-bottom: 100px;
     padding: 0px 80px;
     width: calc(100vw - 160px);
-    height: 411px;
+    height: 600px;
 
     display: flex;
     justify-content: space-between;
@@ -53,7 +53,7 @@ export const ShowStyle = styled.div `
 
     .books {
         width: 100%;
-        height: 500px;
+        height: 600px;
 
         overflow-y: scroll;
 
@@ -95,11 +95,12 @@ export const ShowStyle = styled.div `
                     display: flex;
                     gap: 13px;
                     align-items: center;
+
                     .image {
                         width: 48px;
                         height: 48px;
 
-                        background: #D9D9D9;
+                        background: #F4F5F7;
 
                         border-radius: 50%;
 
@@ -114,12 +115,14 @@ export const ShowStyle = styled.div `
                     }
 
                     h1 {
+                        max-width: 200px;
                         font-size: 14px;
                         font-weight: 600;
                         color: #303642;
                     }
 
                     span {
+                        
                         font-size: 12px;
                         font-weight: 400;
 
@@ -182,6 +185,10 @@ export const ShowStyle = styled.div `
         justify-content: space-between;
 
         gap: 40px;
+
+        .none {
+            display: none;
+        }
 
 
         .modal {
@@ -284,6 +291,7 @@ export const ShowStyle = styled.div `
                         }
 
                         h1 {
+                            max-width: 150px;
                             font-size: 14px;
                             font-weight: 600;
                             color: #303642;
