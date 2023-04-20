@@ -319,7 +319,7 @@ export const ShowStyle = styled.div `
                             gap: 12px;
 
                             .get-book {
-                                width: 143px;
+                                width: 100px;
                                 height: 37px;
         
                                 background: #0E1118;
