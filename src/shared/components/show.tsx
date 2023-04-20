@@ -39,7 +39,7 @@ export function Show() {
         return <BookIcon/>
     }
 
-    const bookFilter = books.filter((book:BookProps) => book.name?.includes(
+    const bookFilter = books.filter((book:BookProps) => book.name.toLowerCase().includes(
         bookFind.toLowerCase())
     )
     return (

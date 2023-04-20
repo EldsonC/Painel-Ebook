@@ -9,7 +9,8 @@ export function Subheader() {
     const dispatch = useDispatch()
 
     const findBy = (title:string) => {
-        dispatch(findBook(title))
+        const titleLower = title.toLowerCase()
+        dispatch(findBook(titleLower))
     }
     return (
         <SubHeaderStyle>
