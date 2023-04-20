@@ -3,6 +3,7 @@ import { SubHeaderStyle } from "../../assets/styles/subheader";
 
 import { useDispatch } from "react-redux";
 import { findBook } from "../../redux/features/searchSlice";
+import { BookWhiteIcon } from "../../assets/icons/bookwhite";
 
 export function Subheader() {
 
@@ -16,7 +17,7 @@ export function Subheader() {
         <SubHeaderStyle>
             <div className="breadcrumb">
                 <div className="image-bread">
-
+                    <BookWhiteIcon/>
                 </div>
                 <span>Livros</span>
             </div>

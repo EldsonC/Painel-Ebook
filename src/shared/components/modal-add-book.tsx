@@ -80,7 +80,7 @@ export function ModalAddBook() {
                 </div>
                 <form>
                     <header>
-                        <div className="close-btn">
+                        <div className="close-btn" onClick={() => dispatch(hide())}>
                             <CloseIcon/>
                         </div>
                     </header>

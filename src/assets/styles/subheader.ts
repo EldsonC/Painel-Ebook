@@ -17,6 +17,10 @@ export const SubHeaderStyle = styled.div `
             width: 35px;
             height: 35px;
 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             border-radius: 50%;
 
             background: #303642;

@@ -33,6 +33,10 @@ export const StyleModalAddBook = styled.div `
 
             position: sticky;
             top: 0px;
+
+            .close-btn {
+                cursor: pointer;
+            }
         }
 
         .select-image {
