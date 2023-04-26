@@ -5,7 +5,12 @@ import { useDispatch } from "react-redux";
 import { findBook } from "../../redux/features/searchSlice";
 import { BookWhiteIcon } from "../../assets/icons/bookwhite";
 
-export function Subheader() {
+interface SubHeaderProps {
+    title?: string;
+    icon?: React.ReactElement
+}
+
+export function Subheader({ title, icon }:SubHeaderProps) {
 
     const dispatch = useDispatch()
 
@@ -17,9 +22,9 @@ export function Subheader() {
         <SubHeaderStyle>
             <div className="breadcrumb">
                 <div className="image-bread">
-                    <BookWhiteIcon/>
+                    { icon }
                 </div>
-                <span>Livros</span>
+                <span>{title}</span>
             </div>
 
             <div className="input-search">

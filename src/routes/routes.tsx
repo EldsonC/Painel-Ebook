@@ -4,6 +4,7 @@ import { Header } from "../shared/components/header";
 import { Show } from "../shared/components/show";
 import { Slide } from "../shared/components/slide";
 import { Subheader } from "../shared/components/subheader";
+import { BookWhiteIcon } from "../assets/icons/bookwhite";
 
 export function Routers() {
     return (
@@ -12,9 +13,21 @@ export function Routers() {
             <Route path="/home" element={
                 <>
                     <Header/>
-                    <Subheader/>
+                    <Subheader
+                        title="Livros"
+                        icon={<BookWhiteIcon/>}
+                    />
                     <Slide/>
                     <Show/>
+                </>
+            }/>
+
+            <Route path="/students" element={
+                <>
+                    <Header/>
+                    <Subheader
+                        title="Alunos"
+                    />
                 </>
             }/>
         </Routes>
