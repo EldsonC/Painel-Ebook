@@ -9,6 +9,8 @@ import { api } from "../services/api";
 import { ModalAddBook } from "./modal-add-book";
 
 import { stateModal } from "../../redux/features/modaladd";
+import { useDispatch } from "react-redux";
+import {totalbook} from "../../redux/features/totalbooks";
 
 interface BookProps {
     cover: string;
@@ -23,11 +25,19 @@ export function Show() {
     const [books , setBooks] = useState([])
     const bookFind = useSelector(bookFound)
     const modalState = useSelector(stateModal)
+    const dispatch = useDispatch()
+
+    const getTotalbooks = (total:number) => {
+        dispatch(totalbook(total))
+    }
+
+    getTotalbooks(books.length)
 
     useEffect(() => {
         api.get("/get-books").then((result) => {
             console.log(result.data)
             setBooks(result.data)
+            
         })
     }, [])
 
