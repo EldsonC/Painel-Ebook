@@ -9,8 +9,10 @@ import { api } from "../services/api";
 import { ModalAddBook } from "./modal-add-book";
 
 import { stateModal } from "../../redux/features/modaladd";
+import { stateModal as stateModalStudent } from "../../redux/features/modaladdstudent";
 import { useDispatch } from "react-redux";
 import {totalbook} from "../../redux/features/totalbooks";
+import { ModalAddStudent } from "./modal-add-student";
 
 interface BookProps {
     cover: string;
@@ -25,6 +27,8 @@ export function Show() {
     const [books , setBooks] = useState([])
     const bookFind = useSelector(bookFound)
     const modalState = useSelector(stateModal)
+    const modaladdstudent = useSelector(stateModalStudent)
+
     const dispatch = useDispatch()
 
     const getTotalbooks = (total:number) => {
@@ -55,6 +59,7 @@ export function Show() {
     return (
         <>
             { modalState ? <ModalAddBook/> : ""}
+            { modaladdstudent ? <ModalAddStudent/> : ""}
             <ShowStyle>
                 <div className="text-data">
                     <h1>Biblioteca</h1>

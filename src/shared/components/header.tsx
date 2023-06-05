@@ -7,6 +7,7 @@ import { HeaderStyle } from "../../assets/styles/header";
 
 import { useDispatch } from "react-redux";
 import { show } from "../../redux/features/modaladd";
+import { show as showStudent } from "../../redux/features/modaladdstudent";
 import { NewUserIcon } from "../../assets/icons/newuser";
 
 export function Header() {
@@ -44,7 +45,7 @@ export function Header() {
                 <button title="New category" className="btn-add">
                     <AddCategoryIcon/>
                 </button>
-                <button title="New student" className="btn-add">
+                <button title="New student" className="btn-add" onClick={() => dispatch(showStudent())}>
                     <NewUserIcon/>
                 </button>
             </div>

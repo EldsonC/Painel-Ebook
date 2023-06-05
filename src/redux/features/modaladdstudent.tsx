@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface SearchProps {
-    modaladdbook: {
+interface StudentProps {
+    modaladdstudent: {
         show: boolean;
     }
 }
 
 export const slice = createSlice({
-    name: "modaladdbook",
+    name: "modaladdstudent",
     initialState: {
         show: false
     },
@@ -30,6 +30,6 @@ export const slice = createSlice({
 })
 
 export const { show, hide } = slice.actions
-export const stateModal = (state:SearchProps) => state.modaladdbook.show
+export const stateModal = (state:StudentProps) => state.modaladdstudent.show
 
 export default slice.reducer
