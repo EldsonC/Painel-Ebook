@@ -28,7 +28,6 @@
     "npm": "9.4.0"
   },
   "scripts": {
-    "heroku-postbuild": "react-scripts build",
     "start": "node server.js",
     "dev": "react-scripts start",
     "build": "react-scripts build",
